@@ -1,5 +1,6 @@
 module load ngc/default
 module load gcc/9.3.0
+
 module load anaconda/2020.11-py38
 module use /home/jiang784/privatemodules
 module load use.own
@@ -44,7 +45,7 @@ module load cudnn
 # python ./train_net.py --config-file ./configs/coco-stuff-10k-171/maskformer_R50_bs32_60k.yaml --eval-only MODEL.WEIGHTS ./ckpts/model_final_cb03eb.pkl 
 
 # train
-# python ./train_net.py \
-#   --config-file ./configs/coco-stuff-10k-171/maskformer_R50_bs32_60k.yaml\
-#   --num-gpus 1 SOLVER.IMS_PER_BATCH 1
+# python ./train_net.py --config-file ./configs/coco-stuff-10k-171/maskformer_R50_bs32_60k.yaml --num-gpus 1 SOLVER.IMS_PER_BATCH 14 OUTPUT_DIR ./logs
 #    SOLVER.BASE_LR 1
+# nohup training script
+# nohup which python | python ./train_net.py --config-file ./configs/coco-stuff-10k-171/maskformer_R50_bs32_60k.yaml --num-gpus 1 SOLVER.IMS_PER_BATCH 14 OUTPUT_DIR ./logs > ./logs/logs_training_1.txt &
