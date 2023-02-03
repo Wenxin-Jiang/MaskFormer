@@ -1,18 +1,20 @@
 module load ngc/default
 module load gcc/9.3.0
-# module load learning/conda-2020.11-py38-gpu
-# module load ml-toolkit-gpu/opencv/4.5.1
 module load anaconda/2020.11-py38
-# conda activate pytorch-maskformer
- # Not sure if needed? No!
-
 module use /home/jiang784/privatemodules
 module load use.own
 module load conda-env/maskformer-torch-py3.8.10
 module load pytorch/21.09-py3 # WARNING: container problem! 
-# optional?
 module load cuda
 module load cudnn
+
+# module load learning/conda-2020.11-py38-gpu
+# module load ml-toolkit-gpu/opencv/4.5.1
+
+# conda activate pytorch-maskformer
+ # Not sure if needed? No!
+
+
 
 ## conda create new env
 # conda-env-mod create -n maskformer-torch
@@ -42,7 +44,7 @@ module load cudnn
 # python ./train_net.py --config-file ./configs/coco-stuff-10k-171/maskformer_R50_bs32_60k.yaml --eval-only MODEL.WEIGHTS ./ckpts/model_final_cb03eb.pkl 
 
 # train
-python ./train_net.py \
-  --config-file ./configs/coco-stuff-10k-171/maskformer_R50_bs32_60k.yaml\
-  --num-gpus 1 SOLVER.IMS_PER_BATCH 1
+# python ./train_net.py \
+#   --config-file ./configs/coco-stuff-10k-171/maskformer_R50_bs32_60k.yaml\
+#   --num-gpus 1 SOLVER.IMS_PER_BATCH 1
 #    SOLVER.BASE_LR 1
