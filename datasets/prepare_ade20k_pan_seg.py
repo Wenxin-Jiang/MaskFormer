@@ -324,7 +324,8 @@ if __name__ == "__main__":
     assert len(np.unique(color_palette, axis=0)) == 150
 
     dataset_dir = os.getenv("DETECTRON2_DATASETS", "datasets")
-
+    # dataset_dir = os.path.join("/scratch/gilbreth/jiang784", "datasets")
+    
     for name, dirname in [("train", "training"), ("val", "validation")]:
         image_dir = os.path.join(dataset_dir, f"ADEChallengeData2016/images/{dirname}/")
         semantic_dir = os.path.join(dataset_dir, f"ADEChallengeData2016/annotations/{dirname}/")

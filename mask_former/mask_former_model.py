@@ -15,6 +15,7 @@ from detectron2.structures import ImageList
 from .modeling.criterion import SetCriterion
 from .modeling.matcher import HungarianMatcher
 
+from loguru import logger
 
 @META_ARCH_REGISTRY.register()
 class MaskFormer(nn.Module):
@@ -165,8 +166,11 @@ class MaskFormer(nn.Module):
         images = [(x - self.pixel_mean) / self.pixel_std for x in images]
         images = ImageList.from_tensors(images, self.size_divisibility)
 
+        logger.debug(f"Input of backbone: {images.shape}")
         features = self.backbone(images.tensor)
+        logger.debug(f"Input of sem_seg_head and Output of backbone: {features.shape}")
         outputs = self.sem_seg_head(features)
+        logger.debug(f"Output of sem_seg_head: {outputs.shape}")
 
         if self.training:
             # mask classification target
@@ -177,6 +181,7 @@ class MaskFormer(nn.Module):
                 targets = None
 
             # bipartite matching-based loss
+            logger.debug(f"target shape used in loss function: {target.shape}")
             losses = self.criterion(outputs, targets)
 
             for k in list(losses.keys()):
