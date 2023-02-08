@@ -8,6 +8,7 @@ module load conda-env/maskformer-torch-py3.8.10
 module load pytorch/21.09-py3 # WARNING: container problem! 
 module load cuda
 module load cudnn
+source ~/.bashrc
 
 # module load learning/conda-2020.11-py38-gpu
 # module load ml-toolkit-gpu/opencv/4.5.1
@@ -48,4 +49,7 @@ module load cudnn
 # python ./train_net.py --config-file ./configs/coco-stuff-10k-171/maskformer_R50_bs32_60k.yaml --num-gpus 1 SOLVER.IMS_PER_BATCH 14 OUTPUT_DIR ./logs
 #    SOLVER.BASE_LR 1
 # nohup training script
-# nohup which python | python ./train_net.py --config-file ./configs/coco-stuff-10k-171/maskformer_R50_bs32_60k.yaml --num-gpus 1 SOLVER.IMS_PER_BATCH 14 OUTPUT_DIR ./logs > ./logs/logs_training_1.txt &
+# nohup which python | python ./train_net.py --config-file ./configs/coco-stuff-10k-171/maskformer_R50_bs32_60k.yaml --num-gpus 1 SOLVER.IMS_PER_BATCH 8 OUTPUT_DIR ./logs > ./logs/logs_training_1.txt &
+
+# Panoptic trainer
+# nohup which python | python ./train_net.py --config-file ./configs/coco-panoptic/maskformer_panoptic_R50_bs64_554k.yaml --num-gpus 1 SOLVER.IMS_PER_BATCH 8 OUTPUT_DIR ./logs > ./logs/logs_training_1.txt &
