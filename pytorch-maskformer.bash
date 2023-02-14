@@ -34,6 +34,7 @@ source ~/.bashrc
 # Other dependencies
 # pip install typer==0.4.0
 # pip install git+https://github.com/facebookresearch/fvcore.git
+# pip install spacy==3.1.2
 # conda install "numpy < 1.23.0"
 
 # dataset
