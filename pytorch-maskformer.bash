@@ -32,9 +32,9 @@ source ~/.bashrc
 # conda install -c conda-forge detectron2
 
 # Other dependencies
-# pip install typer==0.4.0
 # pip install git+https://github.com/facebookresearch/fvcore.git
-# pip install spacy==3.1.2
+# pip install click==3.8.1
+# pip install typer==0.4.0
 # conda install "numpy < 1.23.0"
 
 # dataset
