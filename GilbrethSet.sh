@@ -9,3 +9,6 @@ module load gcc/6.3.0
 # pip install -r requirements.txt
 # pip install opencv-python
 # wget https://dl.fbaipublicfiles.com/maskformer/panoptic-coco/maskformer_panoptic_R50_bs64_554k/model_final_6f60dc.pkl
+
+
+# sinteractive -A standby -N2 -n16 --mem=8G --time=0-02:00 --gres=gpu:1
