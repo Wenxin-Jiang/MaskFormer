@@ -13,4 +13,4 @@ module load gcc/6.3.0
 
 # sinteractive -A standby -N2 -n16 --mem=8G --time=0-02:00 --gres=gpu:1
 
-# export DETECTRON2_DATASETS=/depot/davisjam/data/wenxin/Maskformer_pytorch/datasets
+# export DETECTRON2_DATASETS=/depot/davisjam/data/wenxin/MaskFormer_pytorch/datasets
