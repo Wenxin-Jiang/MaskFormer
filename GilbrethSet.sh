@@ -10,8 +10,8 @@ module load anaconda/2020.11-py38
 conda activate maskformer-tf
 module load cuda/11.7.0
 module load gcc/6.3.0
-export PYTHONPATH="${PYTHONPATH}:/depot/davisjam/data/wenxin/TFMG/tf-maskformer" # NOTE: Detectron2 is installed here? No
-export PATH="${PATH}:/depot/davisjam/data/wenxin/TFMG/tf-maskformer"
+export PYTHONPATH="${PYTHONPATH}:/depot/davisjam/data/wenxin/TFMG/tf-maskformer/models" # NOTE: Detectron2 is installed here? No
+export PATH="${PATH}:/depot/davisjam/data/wenxin/TFMG/tf-maskformer/models"
 
 # conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
 # python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
